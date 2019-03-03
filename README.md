@@ -16,22 +16,40 @@ You can also build from the source by running
 ## Setup 
 
 To open a shell into the container `jnlp`, in the pod `agent-pod-pzxs5` in the default namespace
-`java -jar build/libs/k8s-client-0.0.1.jar   exec \
+```
+java -jar build/libs/k8s-client-0.0.1.jar   exec \
+
 --ns=default \
+
 --pod=agent-pod-pzxs5 \
+
 --con=jnlp \
---cmd=sh `
+
+--cmd=sh 
+```
 
 To log into docker from the container `dind` in the same pod as above
-`java -jar build/libs/k8s-client-0.0.1.jar  exec \
+```
+java -jar build/libs/k8s-client-0.0.1.jar  exec \
+
 --ns=default \
+
 --pod=agent-pod-pzxs5 \
+
 --con=dind \
---cmd=docker --cmd=login --cmd=--username --cmd=efossi --cmd=--password --cmd=mypwd `
+
+--cmd=docker --cmd=login --cmd=--username --cmd=efossi --cmd=--password --cmd=mypwd 
+```
 
 To build a Docker image on the container `dind` in the same pod as above
-`java -jar build/libs/k8s-client-0.0.1.jar  exec \
+```
+java -jar build/libs/k8s-client-0.0.1.jar  exec \
+
 --ns=default \
+
 --pod=agent-pod-pzxs5 \
+
 --con=dind \
---cmd=docker --cmd=login --cmd=--username --cmd=efossi --cmd=--password --cmd=mypwd `
+
+--cmd=docker --cmd=login --cmd=--username --cmd=efossi --cmd=--password --cmd=mypwd 
+```
